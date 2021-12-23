@@ -38,9 +38,9 @@ class _ListPageState extends State<ListPage> {
             if (snapshot.hasData) {
               print(snapshot.data.toString);
               return ListView.builder(
-                itemCount: modelClass.length,
+                // itemCount: modelClass.length,
                 itemBuilder: (context, index) {
-                  ModelClass list = modelClass[index];
+                  // ModelClass list = modelClass[index];
                   if (snapshot.hasData) {
                     return Container(
                         width: 60,
@@ -52,10 +52,8 @@ class _ListPageState extends State<ListPage> {
                                 image: NetworkImage(list.Designation))));
                   } else if (snapshot.hasError) {
                     return Container(
-                      child: const Center(
-                          child: Text("fff"
-                              // snapshot.error.toString()
-                              )),
+                      child:
+                          const Center(child: Text(snapshot.error.toString())),
                     );
                   }
                   return const Center(
@@ -73,16 +71,11 @@ class _ListPageState extends State<ListPage> {
               itemBuilder: (context, index) {
                 if (snapshot.hasData) {
                   return ListTile(
-                    title: Text("ddd"
-                        // snapshot.data.toString()
-                        ),
+                    title: Text(snapshot.data.toString()),
                   );
                 } else if (snapshot.hasError) {
                   return Container(
-                    child: Center(
-                        child: Text("fff"
-                            // snapshot.error.toString()
-                            )),
+                    child: Center(child: Text(snapshot.error.toString())),
                   );
                 }
                 return const Center(
